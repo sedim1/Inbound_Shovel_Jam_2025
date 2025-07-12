@@ -1,0 +1,5 @@
+CompileFlags:
+  Add:
+    - -I/home/sedim/Projects/Inbound_Shovel_Jam_2025/include
+    - -I/home/sedim/Projects/Inbound_Shovel_Jam_2025/src
+
