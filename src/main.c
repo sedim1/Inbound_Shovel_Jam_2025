@@ -1,3 +1,5 @@
+#include "Map.h"
+#include "Player.h"
 #include "raylib.h"
 
 void Init(void);
@@ -9,6 +11,15 @@ void End(void);
 const int screenWidth = 800;
 const int screenHeight = 640;
 
+t_section section = {
+    {1, 1, 1, 1, 1, 1, 1, 1}, {1, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 1}, {1, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 1}, {1, 0, 0, 0, 0, 0, 0, 1},
+    {1, 0, 0, 0, 0, 0, 0, 1}, {1, 1, 1, 1, 1, 1, 1, 1},
+};
+
+t_player player;
+
 int main(void) {
   Init();
   MainLoop();
@@ -18,6 +29,8 @@ int main(void) {
 
 void Init(void) {
   InitWindow(screenWidth, screenHeight, "INBOUND_SHOVEL JAM 2025");
+  SetTargetFPS(60);
+  player = newPlayer();
 }
 
 void MainLoop(void) {
@@ -29,12 +42,13 @@ void MainLoop(void) {
 
 void Draw(void) {
   BeginDrawing();
-
   ClearBackground(RAYWHITE);
-  DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
+  BeginMode3D(player.camera);
+  DrawGrid(10, 1.0f);
+  EndMode3D();
   EndDrawing();
 }
 
-void Update(void) {}
+void Update(void) { PlayerUpdate(&player); }
 
 void End(void) { CloseWindow(); }
