@@ -3,7 +3,7 @@
 #include "raylib.h"
 #include "raymath.h"
 
-#define P_BASE_SPEED 3.0f
+#define P_BASE_SPEED 10.0f
 
 t_player newPlayer() {
   t_player player;

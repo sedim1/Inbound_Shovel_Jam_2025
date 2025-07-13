@@ -3,8 +3,8 @@
 
 #include "GLOBAL.h"
 
-typedef unsigned int t_section[SECTION_HEIGHT][SECTION_WITH];
+typedef int t_section[SECTION_HEIGHT][SECTION_WITH];
 
-void DrawSectionWalls(t_section *section);
+void DrawSectionWalls(t_section section);
 
 #endif
