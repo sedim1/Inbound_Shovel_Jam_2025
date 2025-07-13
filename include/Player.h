@@ -8,6 +8,7 @@ typedef struct {
   Vector3 direction;
   float yaw;
   float pitch;
+  float speed;
 } t_player;
 
 t_player newPlayer();

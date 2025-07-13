@@ -1,3 +1,4 @@
+#include "GLOBAL.h"
 #include "Map.h"
 #include "Player.h"
 #include "raylib.h"
@@ -8,7 +9,7 @@ void Draw(void);
 void Update(void);
 void End(void);
 
-const int screenWidth = 800;
+const int screenWidth = 960;
 const int screenHeight = 640;
 
 t_section section = {
@@ -44,8 +45,9 @@ void Draw(void) {
   BeginDrawing();
   ClearBackground(RAYWHITE);
   BeginMode3D(player.camera);
-  DrawGrid(10, 1.0f);
+  DrawGrid(10, CELLSIZE);
   EndMode3D();
+  DrawPlayerStats(&player);
   EndDrawing();
 }
 
