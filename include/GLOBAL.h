@@ -2,9 +2,9 @@
 #define GLOBAL_H
 
 #define CELLSIZE 4
-#define SECTION_WITH 8
+#define SECTION_WIDTH 8
 #define SECTION_HEIGHT 8
-#define MAX_MAP_SIZE 100
+#define MPMAX_SIZE 9
 
 float NormalizeAngle(float deg);
 

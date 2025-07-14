@@ -7,7 +7,7 @@
 
 t_player newPlayer() {
   t_player player;
-  player.camera.position = (Vector3){0.0f, 2.0f, 0.0f};
+  player.camera.position = (Vector3){0.0f, 10.0f, 0.0f};
   player.camera.fovy = 60.0f;
   player.camera.up = (Vector3){0.0f, 1.0f, 0.0f};
   player.camera.target = (Vector3){0.0f, 0.0f, 0.0f};

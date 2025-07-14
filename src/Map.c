@@ -2,16 +2,15 @@
 #include "GLOBAL.h"
 #include <raylib.h>
 
-void DrawSectionWalls(t_section section) {
-  for (unsigned int z = 0; z < SECTION_HEIGHT; z++) {
-    for (unsigned int x = 0; x < SECTION_WITH; x++) {
-      Vector3 position =
-          (Vector3){x * CELLSIZE + CELLSIZE / 2.0f, CELLSIZE / 2.0f,
-                    z * CELLSIZE + CELLSIZE / 2.0f};
-      if (section[z][x] > 0) {
-        DrawCube(position, CELLSIZE, CELLSIZE, CELLSIZE, RED);
-        DrawCubeWires(position, CELLSIZE, CELLSIZE, CELLSIZE, BLACK);
-      }
-    }
-  }
+t_map CreateMap(t_section patterns[], int n_patterns) {
+  t_map m;
+  do {
+    m.section_start[0] = GetRandomValue(0, MPMAX_SIZE - 1);
+    m.section_end[0] = GetRandomValue(0, MPMAX_SIZE - 1);
+    m.section_start[1] = GetRandomValue(0, MPMAX_SIZE - 1);
+    m.section_end[1] = GetRandomValue(0, MPMAX_SIZE - 1);
+  } while (m.section_start[0] == m.section_end[0] &&
+           m.section_start[1] == m.section_end[1]);
+  return m;
 }
+void GenerateLayout(t_map *map, t_section patterns[], int n_patterns) {}

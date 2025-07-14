@@ -1,8 +1,6 @@
 #include "GLOBAL.h"
-#include "Map.h"
 #include "Player.h"
 #include "raylib.h"
-#include <stdio.h>
 
 void Init(void);
 void MainLoop(void);
@@ -12,89 +10,6 @@ void End(void);
 
 const int screenWidth = 960;
 const int screenHeight = 640;
-
-t_section section = {
-    {
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-    },
-    {
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-    },
-    {
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-    },
-    {
-        1,
-        0,
-        1,
-        1,
-        0,
-        0,
-        0,
-        1,
-    },
-    {
-        1,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        1,
-    },
-    {
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-    },
-    {
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-    },
-    {
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-    },
-};
 
 t_player player;
 
@@ -120,11 +35,13 @@ void MainLoop(void) {
 
 void Draw(void) {
   BeginDrawing();
+
   ClearBackground(RAYWHITE);
+
   BeginMode3D(player.camera);
-  DrawGrid(10, CELLSIZE);
-  DrawSectionWalls(section);
+  DrawGrid(100, CELLSIZE);
   EndMode3D();
+
   DrawPlayerStats(&player);
   EndDrawing();
 }
