@@ -1,4 +1,5 @@
 #include "GLOBAL.h"
+#include "Map.h"
 #include "Player.h"
 #include "raylib.h"
 
@@ -24,6 +25,7 @@ void Init(void) {
   InitWindow(screenWidth, screenHeight, "INBOUND_SHOVEL JAM 2025");
   SetTargetFPS(60);
   player = newPlayer();
+  t_dungeon dungeon = GenerateDungeon(4);
 }
 
 void MainLoop(void) {
